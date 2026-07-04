@@ -2,12 +2,13 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
-//    alias(libs.plugins.kotlin.)
-    // alias(libs.plugins.kotlin.android)
-//    alias(libs.plugins.ksp)
-//    alias(libs.plugins.kotlin.kapt)
-//    id("kotlin-kapt")
-//    id("com.google.devtools.ksp") // Asegúrate de tener el plugin de KSP activo
+    kotlin("plugin.serialization") version "2.2.10"
+//  alias(libs.plugins.kotlin.)
+//  alias(libs.plugins.kotlin.android)
+//  alias(libs.plugins.ksp)
+//  alias(libs.plugins.kotlin.kapt)
+//  id("kotlin-kapt")
+//  id("com.google.devtools.ksp") // Asegúrate de tener el plugin de KSP activo
 }
 
 android {
@@ -108,5 +109,9 @@ dependencies {
     // ── Permisos en tiempo de ejecución para Compose ──
     implementation("com.google.accompanist:accompanist-permissions:0.34.0")
 
-
+    // ── Lab 7 implementation ──
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.kotlin.serialization)
+    implementation(libs.okhttp.logging)
+    implementation(libs.kotlinx.serialization.json)
 }
